@@ -2,7 +2,6 @@ import type { DiagnosticData } from '../types/diagnostic'
 import { supabase } from '../lib/supabase'
 
 export async function submitDiagnostic(data: DiagnosticData): Promise<void> {
-  // Map camelCase fields to snake_case for the DB column names
   const row = {
     nombre:                  data.nombre,
     nombre_artistico:        data.nombreArtistico,
@@ -34,17 +33,21 @@ export async function submitDiagnostic(data: DiagnosticData): Promise<void> {
     una_cosa_herramienta:    data.unaCosaHerramienta,
   }
 
-  const { error } = await supabase.from('diagnostics').insert(row)
-
-  if (error) {
-    // ── FALLBACK: if Supabase isn't configured yet, persist locally ──────────
-    // Remove this block once VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY are set.
-    console.warn('[TintaOS] Supabase insert failed — using localStorage fallback.', error.message)
-    const existing = JSON.parse(localStorage.getItem('tintaos_diagnostics') || '[]') as DiagnosticData[]
-    existing.push({ ...data })
-    localStorage.setItem('tintaos_diagnostics', JSON.stringify(existing))
+  if (supabase) {
+    const { error } = await supabase.from('diagnostics').insert(row)
+    if (!error) {
+      localStorage.removeItem('tintaos_diagnostic_draft')
+      return
+    }
+    console.warn('[TintaOS] Supabase insert error:', error.message)
+  } else {
+    console.warn('[TintaOS] Supabase not configured — using localStorage fallback.')
   }
 
+  // Fallback: persist locally until Supabase is wired up
+  const existing = JSON.parse(localStorage.getItem('tintaos_diagnostics') || '[]') as DiagnosticData[]
+  existing.push({ ...data })
+  localStorage.setItem('tintaos_diagnostics', JSON.stringify(existing))
   localStorage.removeItem('tintaos_diagnostic_draft')
 }
 

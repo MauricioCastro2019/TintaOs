@@ -1,4 +1,4 @@
-﻿import type { DiagnosticData } from '../types/diagnostic'
+import type { DiagnosticData } from '../types/diagnostic'
 import { supabase } from '../lib/supabase'
 
 export async function submitDiagnostic(data: DiagnosticData): Promise<void> {
@@ -36,27 +36,25 @@ export async function submitDiagnostic(data: DiagnosticData): Promise<void> {
   if (supabase) {
     const { error } = await supabase.from('diagnostics').insert(row)
     if (!error) {
-      localStorage.removeItem('BlackVein_diagnostic_draft')
+      localStorage.removeItem('tintaos_diagnostic_draft')
       return
     }
     console.warn('[BlackVein] Supabase insert error:', error.message)
   } else {
-    console.warn('[BlackVein] Supabase not configured â€” using localStorage fallback.')
+    console.warn('[BlackVein] Supabase not configured — using localStorage fallback.')
   }
 
-  // Fallback: persist locally until Supabase is wired up
-  const existing = JSON.parse(localStorage.getItem('BlackVein_diagnostics') || '[]') as DiagnosticData[]
+  const existing = JSON.parse(localStorage.getItem('tintaos_diagnostics') || '[]') as DiagnosticData[]
   existing.push({ ...data })
-  localStorage.setItem('BlackVein_diagnostics', JSON.stringify(existing))
-  localStorage.removeItem('BlackVein_diagnostic_draft')
+  localStorage.setItem('tintaos_diagnostics', JSON.stringify(existing))
+  localStorage.removeItem('tintaos_diagnostic_draft')
 }
 
 export function saveDraft(data: DiagnosticData): void {
-  localStorage.setItem('BlackVein_diagnostic_draft', JSON.stringify(data))
+  localStorage.setItem('tintaos_diagnostic_draft', JSON.stringify(data))
 }
 
 export function loadDraft(): Partial<DiagnosticData> | null {
-  const raw = localStorage.getItem('BlackVein_diagnostic_draft')
+  const raw = localStorage.getItem('tintaos_diagnostic_draft')
   return raw ? JSON.parse(raw) : null
 }
-

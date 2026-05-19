@@ -1,4 +1,4 @@
-import { useReveal } from '../hooks/useReveal'
+﻿import { useReveal } from '../hooks/useReveal'
 
 const pains = [
   {
@@ -51,8 +51,8 @@ const pains = [
         <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
       </svg>
     ),
-    title: 'Sin métricas claras',
-    desc: 'No sabes qué diseños convierten ni cuánto ganas real.',
+    title: 'Sin mÃ©tricas claras',
+    desc: 'No sabes quÃ© diseÃ±os convierten ni cuÃ¡nto ganas real.',
     color: 'rgba(139,31,31,0.12)',
     border: 'rgba(180,60,60,0.22)',
   },
@@ -70,7 +70,7 @@ export default function Problem() {
 
         <div className="reveal" ref={ref1}>
           <span className="section-label">El problema</span>
-          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(1.55rem, 4vw, 2.6rem)', letterSpacing: '-0.025em', lineHeight: 1.15, maxWidth: '600px', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400, fontSize: 'clamp(1.55rem, 4vw, 2.6rem)', letterSpacing: '0.04em', lineHeight: 1.15, maxWidth: '600px', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
             Mucho del trabajo del tatuador ocurre{' '}
             <em style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', color: 'var(--accent-copper-light)' }}>fuera del tatuaje.</em>
           </h2>
@@ -79,7 +79,7 @@ export default function Problem() {
           </p>
         </div>
 
-        {/* Pain cards — 2 col mobile, 3 col desktop */}
+        {/* Pain cards â€” 2 col mobile, 3 col desktop */}
         <div
           className="reveal reveal-delay-1"
           ref={ref2}
@@ -105,7 +105,7 @@ export default function Problem() {
               onMouseLeave={e => (e.currentTarget.style.transform = 'translateY(0)')}
             >
               <div style={{ color: 'var(--accent-copper)', marginBottom: '0.5rem' }}>{p.icon}</div>
-              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-primary)', marginBottom: '0.3rem', lineHeight: 1.3 }}>{p.title}</div>
+              <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-primary)', marginBottom: '0.3rem', lineHeight: 1.3 }}>{p.title}</div>
               <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{p.desc}</div>
             </div>
           ))}
@@ -113,7 +113,7 @@ export default function Problem() {
 
         <div className="reveal reveal-delay-2" ref={ref3}>
           <blockquote className="quote-block">
-            TintaOS nace para preguntarse: ¿qué pasaría si ese sistema estuviera bien pensado desde el principio?
+            BlackVein nace para preguntarse: Â¿quÃ© pasarÃ­a si ese sistema estuviera bien pensado desde el principio?
           </blockquote>
         </div>
       </div>
@@ -121,3 +121,4 @@ export default function Problem() {
     </section>
   )
 }
+

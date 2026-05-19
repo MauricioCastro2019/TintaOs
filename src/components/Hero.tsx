@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+﻿import { useEffect, useRef } from 'react'
 
 interface HeroProps {
   onOpenDiagnostic: () => void
@@ -13,16 +13,16 @@ function MiniDashboard() {
       {/* Profile card */}
       <div className="card" style={{ position: 'absolute', top: 0, left: '4%', width: '210px', padding: '1.1rem', animation: 'float 7s ease-in-out infinite' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '0.75rem' }}>
-          <div style={{ width: 38, height: 38, borderRadius: '50%', background: 'linear-gradient(135deg, #0f2618, #2a6636)', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 700, color: '#eef2ee', fontFamily: "'Space Grotesk', sans-serif" }}>MK</div>
+          <div style={{ width: 38, height: 38, borderRadius: '50%', background: 'linear-gradient(135deg, #0f2618, #2a6636)', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 400, color: '#eef2ee', fontFamily: "'Bebas Neue', sans-serif" }}>MK</div>
           <div>
-            <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)', fontFamily: "'Space Grotesk', sans-serif" }}>Mara Kolhoff</div>
+            <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)', fontFamily: "'Bebas Neue', sans-serif" }}>Mara Kolhoff</div>
             <div style={{ fontSize: '0.68rem', color: 'var(--accent-copper)', letterSpacing: '0.04em' }}>Fine Line · CDMX</div>
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           {[['247', 'clientes'], ['4.9', 'rating'], ['38', 'diseños']].map(([n, l]) => (
             <div key={l} style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '0.95rem', fontWeight: 700, color: l === 'rating' ? 'var(--accent-copper-light)' : 'var(--text-primary)', fontFamily: "'Space Grotesk', sans-serif" }}>{n}</div>
+              <div style={{ fontSize: '0.95rem', fontWeight: 400, color: l === 'rating' ? 'var(--accent-copper-light)' : 'var(--text-primary)', fontFamily: "'Bebas Neue', sans-serif" }}>{n}</div>
               <div style={{ fontSize: '0.62rem', color: 'var(--text-muted)' }}>{l}</div>
             </div>
           ))}
@@ -31,20 +31,20 @@ function MiniDashboard() {
 
       {/* Agenda card */}
       <div className="card" style={{ position: 'absolute', top: '130px', right: '0', width: '185px', padding: '1rem', animation: 'float 8s ease-in-out infinite 1.5s' }}>
-        <div style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--accent-copper)', letterSpacing: '0.1em', marginBottom: '0.75rem', fontFamily: "'Space Grotesk', sans-serif" }}>PRÓXIMAS CITAS</div>
+        <div style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--accent-copper)', letterSpacing: '0.1em', marginBottom: '0.75rem', fontFamily: "'Bebas Neue', sans-serif" }}>PRÓXIMAS CITAS</div>
         {[['Daniela R.', 'Hoy 3pm'], ['Carlos M.', 'Mañana'], ['Sofia P.', 'Jue 2pm']].map(([n, t], i) => (
           <div key={n} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.4rem 0', borderBottom: i < 2 ? '1px solid var(--border)' : 'none' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-primary)', fontFamily: "'Space Grotesk', sans-serif" }}>{n}</span>
-            <span style={{ fontSize: '0.68rem', color: i === 0 ? 'var(--accent-copper)' : 'var(--text-muted)', fontFamily: "'Space Grotesk', sans-serif" }}>{t}</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-primary)', fontFamily: "'Bebas Neue', sans-serif" }}>{n}</span>
+            <span style={{ fontSize: '0.68rem', color: i === 0 ? 'var(--accent-copper)' : 'var(--text-muted)', fontFamily: "'Bebas Neue', sans-serif" }}>{t}</span>
           </div>
         ))}
       </div>
 
       {/* Stats card */}
       <div className="card" style={{ position: 'absolute', top: '75px', right: '25px', width: '150px', padding: '0.875rem', animation: 'float 6s ease-in-out infinite 2s' }}>
-        <div style={{ fontSize: '0.62rem', color: 'var(--text-muted)', marginBottom: '0.375rem', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.08em' }}>ESTE MES</div>
-        <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-primary)', fontFamily: "'Space Grotesk', sans-serif", lineHeight: 1 }}>$18,400</div>
-        <div style={{ fontSize: '0.68rem', color: '#4a9a4a', marginTop: '0.25rem', fontFamily: "'Space Grotesk', sans-serif" }}>↑ 22%</div>
+        <div style={{ fontSize: '0.62rem', color: 'var(--text-muted)', marginBottom: '0.375rem', fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.08em' }}>ESTE MES</div>
+        <div style={{ fontSize: '1.5rem', fontWeight: 400, color: 'var(--text-primary)', fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1 }}>$18,400</div>
+        <div style={{ fontSize: '0.68rem', color: '#4a9a4a', marginTop: '0.25rem', fontFamily: "'Bebas Neue', sans-serif" }}>↑ 22%</div>
         <div style={{ marginTop: '0.625rem', height: '24px', display: 'flex', alignItems: 'flex-end', gap: '3px' }}>
           {[60, 75, 45, 85, 55, 90, 70].map((h, i) => (
             <div key={i} style={{ flex: 1, height: `${h}%`, background: i === 5 ? 'var(--accent-copper)' : 'var(--border-accent)', borderRadius: '2px' }} />
@@ -54,7 +54,7 @@ function MiniDashboard() {
 
       {/* Flashbook */}
       <div className="card" style={{ position: 'absolute', bottom: '20px', left: '6%', width: '175px', padding: '0.875rem', animation: 'float 9s ease-in-out infinite 0.5s' }}>
-        <div style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--accent-copper)', letterSpacing: '0.1em', marginBottom: '0.625rem', fontFamily: "'Space Grotesk', sans-serif" }}>FLASHBOOK</div>
+        <div style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--accent-copper)', letterSpacing: '0.1em', marginBottom: '0.625rem', fontFamily: "'Bebas Neue', sans-serif" }}>FLASHBOOK</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '4px', marginBottom: '0.5rem' }}>
           {[['#0f2618','#2a6636'],['#0a1a0a','#1a3a1a'],['#1a0a0a','#2a1010'],['#0a0a1a','#1a1a4a'],['#1a1000','#3a2800'],['#0a0a0a','#2a2a2a']].map(([c1,c2],i)=>(
             <div key={i} style={{ aspectRatio:'1', borderRadius:'3px', background:`linear-gradient(135deg,${c1},${c2})`, border:'1px solid var(--border)' }} />
@@ -106,7 +106,7 @@ export default function Hero({ onOpenDiagnostic }: HeroProps) {
       >
         {/* Copy */}
         <div>
-          <div className="tag" style={{ marginBottom: '1.5rem', opacity: 0, animation: 'fadeUp 0.5s ease 0.15s forwards' }}>
+          <div className="tag" style={{ marginBottom: '1.5rem', opacity: 0, animation: 'fadeUp 0.5s ease 0.15s forwards', animationFillMode: 'forwards' }}>
             En construcción · Beta privada
           </div>
 
@@ -114,30 +114,31 @@ export default function Hero({ onOpenDiagnostic }: HeroProps) {
             ref={titleRef}
             className="hero-title"
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 700,
-              fontSize: 'clamp(2.1rem, 5.5vw, 3.8rem)',
-              lineHeight: 1.1,
-              letterSpacing: '-0.03em',
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontWeight: 400,
+              fontSize: 'clamp(2.6rem, 8vw, 5rem)',
+              lineHeight: 1.05,
+              letterSpacing: '0.04em',
               color: 'var(--text-primary)',
-              marginBottom: '1.25rem',
+              marginBottom: '1rem',
+              textTransform: 'uppercase',
             }}
           >
             Tu arte no nació para vivir entre{' '}
-            <em style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontWeight: 600, background: 'linear-gradient(135deg, #6fcf84, #9de8b0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            <em style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontWeight: 400, textTransform: 'none', letterSpacing: '-0.01em', background: 'linear-gradient(135deg, #6fcf84, #9de8b0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontSize: '0.85em' }}>
               mensajes perdidos.
             </em>
           </h1>
 
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(0.9rem, 2.5vw, 1.05rem)', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '480px', marginBottom: '0.875rem', opacity: 0, animation: 'fadeUp 0.6s ease 0.3s forwards' }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(0.88rem, 2.5vw, 1rem)', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '460px', marginBottom: '0.875rem', opacity: 0, animation: 'fadeUp 0.6s ease 0.3s forwards', animationFillMode: 'forwards' }}>
             Una plataforma en construcción para tatuadores que quieren mostrar mejor su trabajo, organizar citas, vender diseños y hacer crecer su carrera con un sistema a su altura.
           </p>
 
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', color: 'var(--accent-copper-light)', marginBottom: '2rem', opacity: 0, animation: 'fadeUp 0.6s ease 0.42s forwards' }}>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', color: 'var(--accent-copper-light)', marginBottom: '1.75rem', opacity: 0, animation: 'fadeUp 0.6s ease 0.42s forwards', animationFillMode: 'forwards' }}>
             Desde tus primeros clientes hasta tu propio estudio.
           </p>
 
-          <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', opacity: 0, animation: 'fadeUp 0.6s ease 0.55s forwards' }}>
+          <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', opacity: 0, animation: 'fadeUp 0.6s ease 0.55s forwards', animationFillMode: 'forwards' }}>
             <button className="btn-primary" onClick={onOpenDiagnostic} style={{ fontSize: '0.85rem' }}>
               Hacer diagnóstico
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -163,15 +164,15 @@ export default function Hero({ onOpenDiagnostic }: HeroProps) {
             { val: '4.9★', label: 'Rating', color: '#6fcf84' },
           ].map(({ val, label, color }) => (
             <div key={label} className="card" style={{ padding: '0.875rem', textAlign: 'center' }}>
-              <div style={{ fontSize: '1.15rem', fontWeight: 700, color, fontFamily: "'Space Grotesk', sans-serif", lineHeight: 1 }}>{val}</div>
-              <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '0.25rem', fontFamily: "'Space Grotesk', sans-serif', letterSpacing: '0.05em" }}>{label}</div>
+              <div style={{ fontSize: '1.15rem', fontWeight: 400, color, fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1 }}>{val}</div>
+              <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '0.25rem', fontFamily: "'Bebas Neue', sans-serif', letterSpacing: '0.05em" }}>{label}</div>
             </div>
           ))}
         </div>
         <div className="card" style={{ marginTop: '0.625rem', padding: '0.875rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div>
-            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.08em' }}>PRÓXIMA CITA</div>
-            <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', fontFamily: "'Space Grotesk', sans-serif", marginTop: '0.2rem' }}>Daniela R. — Hoy 3pm</div>
+            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.08em' }}>PRÓXIMA CITA</div>
+            <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', fontFamily: "'Bebas Neue', sans-serif", marginTop: '0.2rem' }}>Daniela R. — Hoy 3pm</div>
           </div>
           <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#4a9a4a', boxShadow: '0 0 6px #4a9a4a' }} />
         </div>

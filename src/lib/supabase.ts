@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+﻿import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
@@ -8,9 +8,10 @@ function buildClient() {
   try {
     return createClient(supabaseUrl.trim(), supabaseAnonKey.trim())
   } catch (e) {
-    console.warn('[TintaOS] Supabase init failed — using localStorage fallback.', e)
+    console.warn('[BlackVein] Supabase init failed â€” using localStorage fallback.', e)
     return null
   }
 }
 
 export const supabase = buildClient()
+

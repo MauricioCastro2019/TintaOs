@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
 const modules = [
@@ -29,7 +29,7 @@ export default function Ecosystem() {
 
         <div className="reveal" ref={ref1} style={{ marginBottom: '2rem' }}>
           <span className="section-label">Posibilidades</span>
-          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(1.55rem, 4vw, 2.6rem)', letterSpacing: '-0.025em', lineHeight: 1.15, maxWidth: '560px', color: 'var(--text-primary)' }}>
+          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400, fontSize: 'clamp(1.55rem, 4vw, 2.6rem)', letterSpacing: '0.04em', lineHeight: 1.15, maxWidth: '560px', color: 'var(--text-primary)' }}>
             Todo lo que podría{' '}
             <em style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', color: 'var(--accent-copper-light)' }}>crecer contigo</em>
           </h2>
@@ -48,7 +48,7 @@ export default function Ecosystem() {
               onMouseLeave={e => (e.currentTarget.style.transform = 'translateY(0)')}
             >
               <div style={{ fontSize: '1.35rem', marginBottom: '0.375rem' }}>{mod.icon}</div>
-              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: '0.82rem', color: 'var(--text-primary)', marginBottom: '0.25rem', lineHeight: 1.25 }}>{mod.title}</div>
+              <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 600, fontSize: '0.82rem', color: 'var(--text-primary)', marginBottom: '0.25rem', lineHeight: 1.25 }}>{mod.title}</div>
               <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-secondary)', lineHeight: 1.45 }}>{mod.desc}</div>
             </div>
           ))}
@@ -73,7 +73,7 @@ export default function Ecosystem() {
           {modules.map((mod, i) => (
             <div key={i} className="card" style={{ padding: '1.5rem', transitionDelay: `${i * 0.04}s` }}>
               <div style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>{mod.icon}</div>
-              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '0.5rem', letterSpacing: '-0.01em', lineHeight: 1.3 }}>{mod.title}</h3>
+              <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 600, fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '0.5rem', letterSpacing: '-0.01em', lineHeight: 1.3 }}>{mod.title}</h3>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{mod.desc}</p>
             </div>
           ))}

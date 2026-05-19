@@ -20,9 +20,9 @@ export default function DiagnosticInvite({ onOpenDiagnostic }: DiagnosticInviteP
       <div className="container-narrow" style={{ textAlign: 'center' }}>
         <div className="reveal" ref={ref1}>
           <span className="section-label" style={{ justifyContent: 'center' }}>Diagnóstico</span>
-          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(1.55rem, 4vw, 2.5rem)', letterSpacing: '-0.025em', lineHeight: 1.15, color: 'var(--text-primary)', marginBottom: '1rem' }}>
-            Queremos diseñar TintaOS con{' '}
-            <em style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', color: 'var(--accent-copper-light)' }}>tatuadores reales.</em>
+          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400, fontSize: 'clamp(2rem, 6vw, 3.5rem)', letterSpacing: '0.04em', lineHeight: 1.1, color: 'var(--text-primary)', marginBottom: '1rem' }}>
+            Queremos construir BlackVein con{' '}
+            <em style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', color: 'var(--accent-copper-light)', textTransform: 'none', fontSize: '0.85em', letterSpacing: 0 }}>tatuadores reales.</em>
           </h2>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
             Antes de decidir qué construir, queremos escucharte.
@@ -30,7 +30,6 @@ export default function DiagnosticInvite({ onOpenDiagnostic }: DiagnosticInviteP
         </div>
 
         <div className="reveal reveal-delay-1" ref={ref2}>
-          {/* Compact points */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginBottom: '2rem' }}>
             {points.map((p, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.875rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '100px' }}>

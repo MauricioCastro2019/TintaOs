@@ -1,4 +1,4 @@
-import type { DiagnosticData } from '../types/diagnostic'
+﻿import type { DiagnosticData } from '../types/diagnostic'
 
 interface ThankYouProps {
   data: DiagnosticData
@@ -13,7 +13,7 @@ function ProfileSummary({ data }: { data: DiagnosticData }) {
     vivo_del_tatuaje: 'Vive del tatuaje',
     estudio_propio: 'Estudio propio',
     coordino_tatuadores: 'Coordina tatuadores',
-    otro: 'Etapa única',
+    otro: 'Etapa Ãºnica',
   }
 
   const etapa = etapaLabels[data.etapaActual] || 'Sin definir'
@@ -33,7 +33,7 @@ function ProfileSummary({ data }: { data: DiagnosticData }) {
     >
       <div
         style={{
-          fontFamily: "'Space Grotesk', sans-serif",
+          fontFamily: "'Bebas Neue', sans-serif",
           fontSize: '0.7rem',
           fontWeight: 600,
           letterSpacing: '0.12em',
@@ -47,7 +47,7 @@ function ProfileSummary({ data }: { data: DiagnosticData }) {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1.5rem' }}>
         {/* Etapa */}
         <div>
-          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.08em', marginBottom: '0.5rem' }}>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.08em', marginBottom: '0.5rem' }}>
             ETAPA DETECTADA
           </div>
           <div
@@ -58,7 +58,7 @@ function ProfileSummary({ data }: { data: DiagnosticData }) {
               background: 'rgba(184,115,51,0.1)',
               border: '1px solid rgba(184,115,51,0.3)',
               borderRadius: '100px',
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Bebas Neue', sans-serif",
               fontSize: '0.82rem',
               fontWeight: 600,
               color: 'var(--accent-copper-light)',
@@ -71,7 +71,7 @@ function ProfileSummary({ data }: { data: DiagnosticData }) {
         {/* Estilos */}
         {topEstilos.length > 0 && (
           <div>
-            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.08em', marginBottom: '0.5rem' }}>
+            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.08em', marginBottom: '0.5rem' }}>
               ESTILOS
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.375rem' }}>
@@ -85,7 +85,7 @@ function ProfileSummary({ data }: { data: DiagnosticData }) {
         {/* Top dolores */}
         {topDolores.length > 0 && (
           <div>
-            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.08em', marginBottom: '0.5rem' }}>
+            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.08em', marginBottom: '0.5rem' }}>
               PRIORIDADES
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
@@ -102,7 +102,7 @@ function ProfileSummary({ data }: { data: DiagnosticData }) {
         {/* Top herramientas */}
         {topHerramientas.length > 0 && (
           <div>
-            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.08em', marginBottom: '0.5rem' }}>
+            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.08em', marginBottom: '0.5rem' }}>
               INTERESES TOP
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.375rem' }}>
@@ -116,7 +116,7 @@ function ProfileSummary({ data }: { data: DiagnosticData }) {
                     borderRadius: '100px',
                     fontSize: '0.72rem',
                     color: '#6fcf84',
-                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontFamily: "'Bebas Neue', sans-serif",
                   }}
                 >
                   {h}
@@ -183,10 +183,10 @@ export default function ThankYou({ data, onClose }: ThankYouProps) {
 
         <h1
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontWeight: 700,
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontWeight: 400,
             fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
-            letterSpacing: '-0.025em',
+            letterSpacing: '0.04em',
             lineHeight: 1.15,
             color: 'var(--text-primary)',
             marginBottom: '1.5rem',
@@ -200,7 +200,7 @@ export default function ThankYou({ data, onClose }: ThankYouProps) {
               color: 'var(--accent-copper-light)',
             }}
           >
-            dibujar TintaOS.
+            dibujar BlackVein.
           </em>
         </h1>
 
@@ -213,7 +213,7 @@ export default function ThankYou({ data, onClose }: ThankYouProps) {
             marginBottom: '1.5rem',
           }}
         >
-          Tus respuestas ya forman parte de la primera lectura real de este proyecto. No queremos construir una app genérica: queremos entender qué necesita un tatuador como tú para crecer con más claridad, más orden y más identidad.
+          Tus respuestas ya forman parte de la primera lectura real de este proyecto. No queremos construir una app genÃ©rica: queremos entender quÃ© necesita un tatuador como tÃº para crecer con mÃ¡s claridad, mÃ¡s orden y mÃ¡s identidad.
         </p>
 
         <blockquote
@@ -248,22 +248,23 @@ export default function ThankYou({ data, onClose }: ThankYouProps) {
             onClick={onClose}
             style={{ fontSize: '0.9rem', textDecoration: 'none' }}
           >
-            Explorar la visión otra vez
+            Explorar la visiÃ³n otra vez
           </a>
         </div>
 
         <p
           style={{
             marginTop: '2rem',
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "'Bebas Neue', sans-serif",
             fontSize: '0.72rem',
             color: 'var(--text-muted)',
             letterSpacing: '0.05em',
           }}
         >
-          TintaOS · En construcción
+          BlackVein Â· En construcciÃ³n
         </p>
       </div>
     </div>
   )
 }
+

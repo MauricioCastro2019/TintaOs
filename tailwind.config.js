@@ -20,8 +20,9 @@ export default {
         'violet-deep': '#0f2618',
       },
       fontFamily: {
-        display: ['Cormorant Garamond', 'Georgia', 'serif'],
-        heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        display: ['Bebas Neue', 'Barlow Condensed', 'system-ui', 'sans-serif'],
+        heading: ['Barlow Condensed', 'system-ui', 'sans-serif'],
+        accent: ['Cormorant Garamond', 'Georgia', 'serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
       animation: {

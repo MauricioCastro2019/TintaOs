@@ -20,16 +20,15 @@ export default function NotAllEqual({ onOpenDiagnostic }: NotAllEqualProps) {
       <div className="container-narrow">
         <div className="reveal" ref={ref1}>
           <span className="section-label">Para ti, sea quien seas</span>
-          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(1.55rem, 4vw, 2.5rem)', letterSpacing: '-0.025em', lineHeight: 1.15, marginBottom: '1rem', color: 'var(--text-primary)' }}>
+          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400, fontSize: 'clamp(2rem, 6vw, 3.5rem)', letterSpacing: '0.04em', lineHeight: 1.1, marginBottom: '1rem', color: 'var(--text-primary)' }}>
             No queremos darte otra herramienta genérica.
           </h2>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.75rem' }}>
-            No todos los tatuadores trabajan igual ni quieren crecer igual. Por eso TintaOS no impone una solución — primero entiende tu mundo.
+            No todos los tatuadores trabajan igual ni quieren crecer igual. Por eso BlackVein no impone una solución — primero entiende tu mundo.
           </p>
         </div>
 
         <div className="reveal reveal-delay-1" ref={ref2}>
-          {/* Profile tiles */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.625rem', marginBottom: '1.75rem' }}>
             {profiles.map((p, i) => (
               <div
@@ -39,7 +38,7 @@ export default function NotAllEqual({ onOpenDiagnostic }: NotAllEqualProps) {
                 onMouseLeave={e => (e.currentTarget.style.transform = 'translateY(0)')}
               >
                 <span style={{ fontSize: '1.4rem', flexShrink: 0 }}>{p.icon}</span>
-                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1.3 }}>{p.label}</span>
+                <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.3 }}>{p.label}</span>
               </div>
             ))}
           </div>

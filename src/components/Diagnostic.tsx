@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import type { DiagnosticData } from '../types/diagnostic'
 import { emptyDiagnostic } from '../types/diagnostic'
 import { submitDiagnostic, saveDraft, loadDraft } from '../utils/submitDiagnostic'
@@ -8,17 +8,17 @@ interface DiagnosticProps {
   onClose: () => void
 }
 
-// ─── Helper components ────────────────────────────────────────────────────────
+// â”€â”€â”€ Helper components â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function ProgressBar({ current, total }: { current: number; total: number }) {
   const pct = Math.round((current / total) * 100)
   return (
     <div style={{ marginBottom: '2rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.625rem' }}>
-        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.72rem', color: 'var(--accent-copper)', letterSpacing: '0.1em', fontWeight: 600 }}>
+        <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '0.72rem', color: 'var(--accent-copper)', letterSpacing: '0.1em', fontWeight: 600 }}>
           BLOQUE {current} DE {total}
         </span>
-        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.72rem', color: 'var(--text-muted)' }}>
+        <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '0.72rem', color: 'var(--text-muted)' }}>
           {pct}%
         </span>
       </div>
@@ -120,10 +120,10 @@ function BlockTitle({ children }: { children: React.ReactNode }) {
   return (
     <h2
       style={{
-        fontFamily: "'Space Grotesk', sans-serif",
-        fontWeight: 700,
+        fontFamily: "'Bebas Neue', sans-serif",
+        fontWeight: 400,
         fontSize: 'clamp(1.3rem, 3vw, 1.75rem)',
-        letterSpacing: '-0.02em',
+        letterSpacing: '0.03em',
         lineHeight: 1.2,
         color: 'var(--text-primary)',
         marginBottom: '1.75rem',
@@ -161,7 +161,7 @@ function Field({
   )
 }
 
-// ─── Blocks ───────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Blocks â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function Block1({
   data,
@@ -174,7 +174,7 @@ function Block1({
 }) {
   return (
     <div>
-      <BlockTitle>¿Quién eres?</BlockTitle>
+      <BlockTitle>Â¿QuiÃ©n eres?</BlockTitle>
       <FieldGroup>
         <Field label="Nombre" required error={errors.nombre}>
           <input
@@ -184,7 +184,7 @@ function Block1({
             onChange={e => onChange('nombre', e.target.value)}
           />
         </Field>
-        <Field label="Nombre artístico o nombre del estudio" error={errors.nombreArtistico}>
+        <Field label="Nombre artÃ­stico o nombre del estudio" error={errors.nombreArtistico}>
           <input
             className="form-input"
             placeholder="Tu alias, brand o nombre de estudio"
@@ -218,11 +218,11 @@ function Block1({
             onChange={e => onChange('instagram', e.target.value)}
           />
         </Field>
-        <Field label="¿Tienes sitio web actualmente?" error={errors.tieneSitioWeb}>
+        <Field label="Â¿Tienes sitio web actualmente?" error={errors.tieneSitioWeb}>
           <RadioGroup
             name="tieneSitioWeb"
             options={[
-              { value: 'si', label: 'Sí' },
+              { value: 'si', label: 'SÃ­' },
               { value: 'no', label: 'No' },
               { value: 'lo_he_pensado', label: 'Lo he pensado' },
             ]}
@@ -244,12 +244,12 @@ function Block2({
 }) {
   return (
     <div>
-      <BlockTitle>¿En qué momento de tu camino como tatuador te encuentras?</BlockTitle>
+      <BlockTitle>Â¿En quÃ© momento de tu camino como tatuador te encuentras?</BlockTitle>
       <RadioGroup
         name="etapaActual"
         options={[
           { value: 'aprendiendo', label: 'Estoy aprendiendo o practico con amigos/conocidos' },
-          { value: 'clientes_ocasionales', label: 'Ya tatúo y tengo clientes ocasionales' },
+          { value: 'clientes_ocasionales', label: 'Ya tatÃºo y tengo clientes ocasionales' },
           { value: 'clientes_constantes', label: 'Tengo clientes constantes y agenda activa' },
           { value: 'vivo_del_tatuaje', label: 'Vivo principalmente del tatuaje' },
           { value: 'estudio_propio', label: 'Tengo estudio propio' },
@@ -260,7 +260,7 @@ function Block2({
         onChange={v => onChange('etapaActual', v)}
       />
       <div style={{ marginTop: '1.5rem' }}>
-        <label className="form-label">Cuéntanos un poco más sobre tu etapa actual <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(opcional)</span></label>
+        <label className="form-label">CuÃ©ntanos un poco mÃ¡s sobre tu etapa actual <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(opcional)</span></label>
         <textarea
           className="form-input"
           placeholder="Tu contexto en tus propias palabras..."
@@ -294,22 +294,22 @@ function Block3({
 
   return (
     <div>
-      <BlockTitle>¿Cómo trabajas hoy?</BlockTitle>
+      <BlockTitle>Â¿CÃ³mo trabajas hoy?</BlockTitle>
       <FieldGroup>
-        {field('¿Trabajas solo o con equipo?', 'trabajaSolo', [
+        {field('Â¿Trabajas solo o con equipo?', 'trabajaSolo', [
           { value: 'solo', label: 'Solo' },
           { value: 'colegas', label: 'Con uno o dos colegas' },
           { value: 'estudio', label: 'En un estudio' },
           { value: 'equipo_propio', label: 'Tengo equipo propio' },
         ])}
-        {field('¿Dónde atiendes principalmente?', 'dondeAtiende', [
+        {field('Â¿DÃ³nde atiendes principalmente?', 'dondeAtiende', [
           { value: 'casa', label: 'Casa / espacio adaptado' },
           { value: 'estudio_ajeno', label: 'Estudio ajeno' },
           { value: 'estudio_propio', label: 'Estudio propio' },
           { value: 'domicilio', label: 'A domicilio' },
           { value: 'variable', label: 'Variable' },
         ])}
-        {field('¿Cómo recibes la mayoría de tus solicitudes?', 'comoRecibesSolicitudes', [
+        {field('Â¿CÃ³mo recibes la mayorÃ­a de tus solicitudes?', 'comoRecibesSolicitudes', [
           { value: 'instagram', label: 'Instagram DM' },
           { value: 'whatsapp', label: 'WhatsApp' },
           { value: 'facebook', label: 'Facebook' },
@@ -317,28 +317,28 @@ function Block3({
           { value: 'presencial', label: 'Presencial' },
           { value: 'otro', label: 'Otro' },
         ])}
-        {field('¿Cómo organizas tus citas?', 'comoOrganizaCitas', [
+        {field('Â¿CÃ³mo organizas tus citas?', 'comoOrganizaCitas', [
           { value: 'memoria', label: 'Memoria' },
           { value: 'notas', label: 'Notas' },
-          { value: 'agenda_fisica', label: 'Agenda física' },
+          { value: 'agenda_fisica', label: 'Agenda fÃ­sica' },
           { value: 'google_calendar', label: 'Google Calendar' },
           { value: 'whatsapp', label: 'WhatsApp' },
           { value: 'app', label: 'App / software' },
           { value: 'otro', label: 'Otro' },
         ])}
-        {field('¿Manejas anticipos?', 'manejaAnticipos', [
-          { value: 'siempre', label: 'Sí, siempre' },
+        {field('Â¿Manejas anticipos?', 'manejaAnticipos', [
+          { value: 'siempre', label: 'SÃ­, siempre' },
           { value: 'a_veces', label: 'A veces' },
           { value: 'no', label: 'No' },
           { value: 'quiero_empezar', label: 'Quiero empezar a hacerlo' },
         ])}
-        {field('¿Trabajas proyectos por varias sesiones?', 'trabajaMultiSesion', [
-          { value: 'si', label: 'Sí' },
+        {field('Â¿Trabajas proyectos por varias sesiones?', 'trabajaMultiSesion', [
+          { value: 'si', label: 'SÃ­' },
           { value: 'no', label: 'No' },
           { value: 'a_veces', label: 'A veces' },
         ])}
-        {field('¿Vendes o apartas diseños disponibles?', 'vendeDisenos', [
-          { value: 'si', label: 'Sí' },
+        {field('Â¿Vendes o apartas diseÃ±os disponibles?', 'vendeDisenos', [
+          { value: 'si', label: 'SÃ­' },
           { value: 'no', label: 'No' },
           { value: 'me_interesa', label: 'Me interesa hacerlo mejor' },
         ])}
@@ -356,25 +356,25 @@ function Block4({
 }) {
   const doloresOptions = [
     'Me escriben muchos, pero pocos reservan',
-    'Pierdo tiempo pidiendo información para cotizar',
+    'Pierdo tiempo pidiendo informaciÃ³n para cotizar',
     'Me cuesta explicar precios sin que se malinterpreten',
     'Se me desordenan citas o cambios de fecha',
     'Hay clientes que cancelan o desaparecen',
-    'No tengo un portafolio que se vea tan profesional como me gustaría',
-    'Mis diseños disponibles se pierden entre publicaciones o historias',
+    'No tengo un portafolio que se vea tan profesional como me gustarÃ­a',
+    'Mis diseÃ±os disponibles se pierden entre publicaciones o historias',
     'Me cuesta hacer contenido constante para redes',
     'No llevo control claro de clientes',
     'No llevo control claro de ingresos',
     'No llevo control de insumos',
     'Se me acaban materiales sin anticiparlo',
-    'Me gustaría verme más profesional ante clientes nuevos',
+    'Me gustarÃ­a verme mÃ¡s profesional ante clientes nuevos',
     'Quiero crecer, pero siento que me falta sistema',
     'Otro',
   ]
 
   return (
     <div>
-      <BlockTitle>¿Qué te complica más en tu operación actual?</BlockTitle>
+      <BlockTitle>Â¿QuÃ© te complica mÃ¡s en tu operaciÃ³n actual?</BlockTitle>
       <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
         Selecciona todas las que apliquen
       </p>
@@ -385,10 +385,10 @@ function Block4({
         columns={1}
       />
       <div style={{ marginTop: '1.5rem' }}>
-        <label className="form-label">Si tu mayor frustración no está aquí, escríbela con tus palabras.</label>
+        <label className="form-label">Si tu mayor frustraciÃ³n no estÃ¡ aquÃ­, escrÃ­bela con tus palabras.</label>
         <textarea
           className="form-input"
-          placeholder="Describe el problema que más te quita tiempo o energía..."
+          placeholder="Describe el problema que mÃ¡s te quita tiempo o energÃ­a..."
           rows={3}
           value={data.otroDolor}
           onChange={e => onChange('otroDolor', e.target.value)}
@@ -409,21 +409,21 @@ function Block5({
   const options = [
     'Perfil web profesional',
     'Portafolio organizado',
-    'Libro de diseños disponibles / flashbook',
+    'Libro de diseÃ±os disponibles / flashbook',
     'Formulario inteligente de solicitudes',
-    'Cotizaciones más ordenadas',
+    'Cotizaciones mÃ¡s ordenadas',
     'Agenda de citas',
-    'Gestión de anticipos',
-    'Recordatorios automáticos para clientes',
+    'GestiÃ³n de anticipos',
+    'Recordatorios automÃ¡ticos para clientes',
     'Historial de clientes',
     'Seguimiento post-tatuaje',
     'Consentimiento digital',
     'Control de insumos',
     'Alertas de stock bajo',
-    'Publicidad / generación de contenido',
-    'Reseñas de clientes',
-    'Métricas de crecimiento',
-    'Gestión de estudio con varios artistas',
+    'Publicidad / generaciÃ³n de contenido',
+    'ReseÃ±as de clientes',
+    'MÃ©tricas de crecimiento',
+    'GestiÃ³n de estudio con varios artistas',
     'Tienda o venta de productos',
     'Cursos / comunidad / aprendizaje',
     'Otro',
@@ -431,7 +431,7 @@ function Block5({
 
   return (
     <div>
-      <BlockTitle>¿Qué herramientas te interesarían más dentro de una plataforma como TintaOS?</BlockTitle>
+      <BlockTitle>Â¿QuÃ© herramientas te interesarÃ­an mÃ¡s dentro de una plataforma como BlackVein?</BlockTitle>
       <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
         Selecciona todas las que te interesen
       </p>
@@ -454,7 +454,7 @@ function Block6({
 }) {
   const estilosOpts = [
     'Fine line', 'Blackwork', 'Tradicional / old school', 'Neotradicional',
-    'Realismo', 'Lettering', 'Japonés', 'Geométrico', 'Ornamental',
+    'Realismo', 'Lettering', 'JaponÃ©s', 'GeomÃ©trico', 'Ornamental',
     'Anime / cultura pop', 'Minimalista', 'Puntillismo', 'Otro',
   ]
 
@@ -462,10 +462,10 @@ function Block6({
     { value: 'elegante', label: 'Elegante y premium' },
     { value: 'underground', label: 'Oscura y underground' },
     { value: 'minimalista', label: 'Minimalista' },
-    { value: 'clasica', label: 'Tradicional y clásica' },
-    { value: 'mistica', label: 'Mística / simbólica' },
+    { value: 'clasica', label: 'Tradicional y clÃ¡sica' },
+    { value: 'mistica', label: 'MÃ­stica / simbÃ³lica' },
     { value: 'urbana', label: 'Urbana y agresiva' },
-    { value: 'artistica', label: 'Artística / de autor' },
+    { value: 'artistica', label: 'ArtÃ­stica / de autor' },
     { value: 'humana', label: 'Cercana y humana' },
     { value: 'otro', label: 'Otro' },
   ]
@@ -475,7 +475,7 @@ function Block6({
       <BlockTitle>Tu identidad como artista</BlockTitle>
       <FieldGroup>
         <div>
-          <label className="form-label">¿Qué estilos de tatuaje trabajas o te interesa trabajar?</label>
+          <label className="form-label">Â¿QuÃ© estilos de tatuaje trabajas o te interesa trabajar?</label>
           <div
             style={{
               display: 'flex',
@@ -499,7 +499,7 @@ function Block6({
                   borderColor: (data.estilos as string[]).includes(estilo) ? 'var(--accent-copper)' : 'var(--border-accent)',
                   background: (data.estilos as string[]).includes(estilo) ? 'rgba(184,115,51,0.12)' : 'transparent',
                   color: (data.estilos as string[]).includes(estilo) ? 'var(--accent-copper-light)' : 'var(--text-secondary)',
-                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontFamily: "'Bebas Neue', sans-serif",
                   fontSize: '0.8rem',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
@@ -511,10 +511,10 @@ function Block6({
           </div>
         </div>
 
-        <Field label="¿Qué hace diferente tu propuesta como tatuador?">
+        <Field label="Â¿QuÃ© hace diferente tu propuesta como tatuador?">
           <textarea
             className="form-input"
-            placeholder="Lo que te hace único en tu oficio y forma de trabajar..."
+            placeholder="Lo que te hace Ãºnico en tu oficio y forma de trabajar..."
             rows={3}
             value={data.queTeDiferencia}
             onChange={e => onChange('queTeDiferencia', e.target.value)}
@@ -522,7 +522,7 @@ function Block6({
           />
         </Field>
 
-        <Field label="¿Qué tipo de presencia digital se parece más a ti?">
+        <Field label="Â¿QuÃ© tipo de presencia digital se parece mÃ¡s a ti?">
           <RadioGroup
             name="tipoPresencia"
             options={presenciaOpts}
@@ -531,10 +531,10 @@ function Block6({
           />
         </Field>
 
-        <Field label="¿Qué te gustaría que una persona sintiera al entrar a tu perfil?">
+        <Field label="Â¿QuÃ© te gustarÃ­a que una persona sintiera al entrar a tu perfil?">
           <textarea
             className="form-input"
-            placeholder="Emoción, sensación, mensaje..."
+            placeholder="EmociÃ³n, sensaciÃ³n, mensaje..."
             rows={2}
             value={data.queSientaAlEntrar}
             onChange={e => onChange('queSientaAlEntrar', e.target.value)}
@@ -542,10 +542,10 @@ function Block6({
           />
         </Field>
 
-        <Field label="¿Qué tipo de cliente quieres atraer?">
+        <Field label="Â¿QuÃ© tipo de cliente quieres atraer?">
           <textarea
             className="form-input"
-            placeholder="Tu cliente ideal: cómo es, qué valora, qué busca..."
+            placeholder="Tu cliente ideal: cÃ³mo es, quÃ© valora, quÃ© busca..."
             rows={2}
             value={data.tipoClienteQuieres}
             onChange={e => onChange('tipoClienteQuieres', e.target.value)}
@@ -565,21 +565,21 @@ function Block7({
   onChange: (k: keyof DiagnosticData, v: DiagnosticData[keyof DiagnosticData]) => void
 }) {
   const metasOpts = [
-    'Tener más clientes', 'Tener mejor tipo de cliente', 'Cobrar mejor mi trabajo',
+    'Tener mÃ¡s clientes', 'Tener mejor tipo de cliente', 'Cobrar mejor mi trabajo',
     'Organizarme sin perder libertad', 'Tener agenda constante', 'Tener mi propio estudio',
-    'Hacer crecer mi estudio actual', 'Construir una marca reconocible', 'Vender mis diseños',
+    'Hacer crecer mi estudio actual', 'Construir una marca reconocible', 'Vender mis diseÃ±os',
     'Dar cursos', 'Vender merch o productos', 'Crear comunidad',
     'Viajar o tatuar en otras ciudades', 'Otro',
   ]
 
   return (
     <div>
-      <BlockTitle>Tu visión de crecimiento</BlockTitle>
+      <BlockTitle>Tu visiÃ³n de crecimiento</BlockTitle>
       <FieldGroup>
-        <Field label="Si TintaOS pudiera ayudarte a construir tu versión ideal como tatuador, ¿cómo se vería tu carrera dentro de 3 años?">
+        <Field label="Si BlackVein pudiera ayudarte a construir tu versiÃ³n ideal como tatuador, Â¿cÃ³mo se verÃ­a tu carrera dentro de 3 aÃ±os?">
           <textarea
             className="form-input"
-            placeholder="Descríbelo con libertad. Sin límites..."
+            placeholder="DescrÃ­belo con libertad. Sin lÃ­mites..."
             rows={5}
             value={data.visionCrecimiento}
             onChange={e => onChange('visionCrecimiento', e.target.value)}
@@ -588,7 +588,7 @@ function Block7({
         </Field>
 
         <div>
-          <label className="form-label">¿Qué metas te interesan más?</label>
+          <label className="form-label">Â¿QuÃ© metas te interesan mÃ¡s?</label>
           <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.875rem', fontFamily: "'Inter', sans-serif" }}>
             Selecciona todas las que apliquen
           </p>
@@ -615,12 +615,12 @@ function Block8({
     <div>
       <BlockTitle>Casi terminamos</BlockTitle>
       <FieldGroup>
-        <Field label="¿Te gustaría conocer una propuesta personalizada basada en tus respuestas?">
+        <Field label="Â¿Te gustarÃ­a conocer una propuesta personalizada basada en tus respuestas?">
           <RadioGroup
             name="quieresPropuesta"
             options={[
-              { value: 'si', label: 'Sí' },
-              { value: 'tal_vez', label: 'Me interesa, aunque no sé todavía' },
+              { value: 'si', label: 'SÃ­' },
+              { value: 'tal_vez', label: 'Me interesa, aunque no sÃ© todavÃ­a' },
               { value: 'solo_aportar', label: 'Por ahora solo quiero aportar' },
             ]}
             value={data.quieresPropuesta}
@@ -628,11 +628,11 @@ function Block8({
           />
         </Field>
 
-        <Field label="¿Aceptarías una conversación breve para profundizar en tus necesidades?">
+        <Field label="Â¿AceptarÃ­as una conversaciÃ³n breve para profundizar en tus necesidades?">
           <RadioGroup
             name="aceptaConversacion"
             options={[
-              { value: 'si', label: 'Sí' },
+              { value: 'si', label: 'SÃ­' },
               { value: 'tal_vez', label: 'Tal vez' },
               { value: 'no', label: 'No por ahora' },
             ]}
@@ -641,10 +641,10 @@ function Block8({
           />
         </Field>
 
-        <Field label="Si pudieras pedirle UNA sola cosa a la herramienta perfecta para tatuadores, ¿qué sería?">
+        <Field label="Si pudieras pedirle UNA sola cosa a la herramienta perfecta para tatuadores, Â¿quÃ© serÃ­a?">
           <textarea
             className="form-input"
-            placeholder="Una sola cosa, la más importante..."
+            placeholder="Una sola cosa, la mÃ¡s importante..."
             rows={3}
             value={data.unaCosaHerramienta}
             onChange={e => onChange('unaCosaHerramienta', e.target.value)}
@@ -656,7 +656,7 @@ function Block8({
   )
 }
 
-// ─── Main Diagnostic Component ────────────────────────────────────────────────
+// â”€â”€â”€ Main Diagnostic Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const TOTAL_BLOCKS = 8
 
@@ -665,7 +665,7 @@ function validateBlock(block: number, data: DiagnosticData): Partial<Record<keyo
   if (block === 1) {
     if (!data.nombre.trim()) errors.nombre = 'Tu nombre es necesario'
     if (!data.ciudad.trim()) errors.ciudad = 'Indica tu ciudad o estado'
-    if (!data.contacto.trim()) errors.contacto = 'Agrega un número o forma de contacto'
+    if (!data.contacto.trim()) errors.contacto = 'Agrega un nÃºmero o forma de contacto'
   }
   return errors
 }
@@ -720,8 +720,8 @@ export default function Diagnostic({ onClose }: DiagnosticProps) {
   }
 
   const blockLabels = [
-    'Quién eres', 'Tu etapa', 'Cómo trabajas', 'Tus dolores',
-    'Herramientas', 'Tu identidad', 'Tu visión', 'Cierre',
+    'QuiÃ©n eres', 'Tu etapa', 'CÃ³mo trabajas', 'Tus dolores',
+    'Herramientas', 'Tu identidad', 'Tu visiÃ³n', 'Cierre',
   ]
 
   return (
@@ -750,8 +750,8 @@ export default function Diagnostic({ onClose }: DiagnosticProps) {
           <div>
             <span
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 700,
+                fontFamily: "'Bebas Neue', sans-serif",
+                fontWeight: 400,
                 fontSize: '1rem',
                 color: 'var(--text-primary)',
               }}
@@ -761,7 +761,7 @@ export default function Diagnostic({ onClose }: DiagnosticProps) {
             <span
               style={{
                 marginLeft: '0.75rem',
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "'Bebas Neue', sans-serif",
                 fontSize: '0.75rem',
                 color: 'var(--text-muted)',
               }}
@@ -779,7 +779,7 @@ export default function Diagnostic({ onClose }: DiagnosticProps) {
               padding: '0.4rem 0.75rem',
               cursor: 'pointer',
               color: 'var(--text-muted)',
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Bebas Neue', sans-serif",
               fontSize: '0.78rem',
               display: 'flex',
               alignItems: 'center',
@@ -846,7 +846,7 @@ export default function Diagnostic({ onClose }: DiagnosticProps) {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                 <path d="M19 12H5M12 19l-7-7 7-7" />
               </svg>
-              Atrás
+              AtrÃ¡s
             </button>
           ) : (
             <div />
@@ -880,7 +880,7 @@ export default function Diagnostic({ onClose }: DiagnosticProps) {
                 </>
               ) : (
                 <>
-                  Enviar mi diagnóstico
+                  Enviar mi diagnÃ³stico
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
@@ -900,3 +900,4 @@ export default function Diagnostic({ onClose }: DiagnosticProps) {
     </div>
   )
 }
+

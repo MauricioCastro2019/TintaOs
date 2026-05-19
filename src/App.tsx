@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Problem from './components/Problem'
@@ -8,14 +8,24 @@ import Evolution from './components/Evolution'
 import Manifesto from './components/Manifesto'
 import DiagnosticInvite from './components/DiagnosticInvite'
 import Diagnostic from './components/Diagnostic'
+import StickyBar from './components/StickyBar'
 import Footer from './components/Footer'
 
 export default function App() {
   const [showDiagnostic, setShowDiagnostic] = useState(false)
+  const [stickyVisible, setStickyVisible] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => {
+      // Show sticky bar after scrolling past ~60% of first viewport
+      setStickyVisible(window.scrollY > window.innerHeight * 0.6)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   function openDiagnostic() {
     setShowDiagnostic(true)
-    // Prevent background scroll while diagnostic is open
     document.body.style.overflow = 'hidden'
   }
 
@@ -26,7 +36,6 @@ export default function App() {
 
   return (
     <>
-      {/* Landing page */}
       <Header onOpenDiagnostic={openDiagnostic} />
 
       <main>
@@ -40,6 +49,9 @@ export default function App() {
       </main>
 
       <Footer onOpenDiagnostic={openDiagnostic} />
+
+      {/* Mobile sticky CTA — hidden on desktop via CSS */}
+      <StickyBar onOpenDiagnostic={openDiagnostic} visible={stickyVisible && !showDiagnostic} />
 
       {/* Diagnostic overlay */}
       {showDiagnostic && <Diagnostic onClose={closeDiagnostic} />}

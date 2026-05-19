@@ -227,24 +227,34 @@ h1, h2, h3, h4 {
 
 /* ─── Section Styles ─── */
 .section {
-  padding: 7rem 0;
+  padding: 3rem 0;
   position: relative;
 }
 
 .section-sm {
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
 }
 
 .container-narrow {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .section { padding: 5rem 0; }
+  .section-sm { padding: 3rem 0; }
+  .container, .container-narrow { padding: 0 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .section { padding: 7rem 0; }
 }
 
 /* ─── Section Labels ─── */
@@ -463,13 +473,69 @@ h1, h2, h3, h4 {
   overflow-y: auto;
 }
 
+/* ─── Sticky CTA Bar (mobile only) ─── */
+.sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 7500;
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 1.25rem;
+  background: rgba(8, 8, 8, 0.97);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(111, 207, 132, 0.2);
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sticky-bar.visible {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .sticky-bar { display: none; }
+}
+
+/* ─── Accordion (Evolution mobile) ─── */
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 1rem;
+}
+
+.accordion-body {
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+}
+
+.accordion-body.open {
+  max-height: 300px;
+  opacity: 1;
+}
+
 /* ─── Responsive helpers ─── */
-@media (max-width: 768px) {
-  .section {
-    padding: 4rem 0;
-  }
+@media (max-width: 767px) {
+  body { padding-bottom: 70px; }
 
   h1.hero-title {
-    font-size: clamp(2.2rem, 8vw, 3.5rem) !important;
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+
+  /* Reduce form 2-col to 1-col on mobile */
+  .form-grid-2 {
+    grid-template-columns: 1fr !important;
   }
 }
+

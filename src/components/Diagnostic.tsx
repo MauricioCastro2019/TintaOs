@@ -192,7 +192,7 @@ function Block1({
             onChange={e => onChange('nombreArtistico', e.target.value)}
           />
         </Field>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+        <div className="form-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
           <Field label="Ciudad / Estado" required error={errors.ciudad}>
             <input
               className={`form-input ${errors.ciudad ? 'error' : ''}`}

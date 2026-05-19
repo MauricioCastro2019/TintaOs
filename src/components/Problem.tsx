@@ -1,218 +1,123 @@
-import { useRef } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
-const chaoticMessages = [
-  '¿cuánto por este diseño?',
-  'te mando depósito mañana',
-  '¿qué cuidados lleva?',
-  'espérame, ya te confirmo',
-  'se me acabaron agujas 😬',
-  '¿tienes para el miércoles?',
-  'mis diseños donde los tengo?',
-  'creo que canceló...',
-  '¿cuánto mide aprox?',
-  'ya pagué, te mando foto',
+const pains = [
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+    ),
+    title: 'Cotizaciones perdidas',
+    desc: 'Precios, referencias y detalles enterrados en el chat.',
+    color: 'rgba(42,102,54,0.12)',
+    border: 'rgba(62,160,85,0.25)',
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+    ),
+    title: 'Citas sin sistema',
+    desc: 'Cambios, cancelaciones y olvidos que te roban tiempo.',
+    color: 'rgba(30,60,120,0.15)',
+    border: 'rgba(50,100,200,0.25)',
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+      </svg>
+    ),
+    title: 'Portfolio disperso',
+    desc: 'Tu mejor trabajo enterrado en historias de Instagram.',
+    color: 'rgba(61,18,96,0.18)',
+    border: 'rgba(100,50,180,0.28)',
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+      </svg>
+    ),
+    title: 'Insumos sin control',
+    desc: 'Te quedas sin agujas o tinta en plena semana de trabajo.',
+    color: 'rgba(120,80,20,0.12)',
+    border: 'rgba(200,140,40,0.22)',
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+      </svg>
+    ),
+    title: 'Sin métricas claras',
+    desc: 'No sabes qué diseños convierten ni cuánto ganas real.',
+    color: 'rgba(139,31,31,0.12)',
+    border: 'rgba(180,60,60,0.22)',
+  },
 ]
 
 export default function Problem() {
-  const sectionRef = useReveal() as React.MutableRefObject<HTMLElement>
-  const messagesRef = useRef<HTMLDivElement>(null)
+  const ref1 = useReveal() as React.MutableRefObject<HTMLDivElement>
+  const ref2 = useReveal() as React.MutableRefObject<HTMLDivElement>
+  const ref3 = useReveal() as React.MutableRefObject<HTMLDivElement>
 
   return (
-    <section className="section" style={{ background: 'var(--bg-secondary)', position: 'relative', overflow: 'hidden' }}>
-      {/* Top divider */}
+    <section className="section" style={{ background: 'var(--bg-secondary)' }}>
       <div className="divider-copper" />
+      <div className="container" style={{ paddingTop: '2.5rem' }}>
 
-      <div className="container">
-        {/* Label */}
-        <div className="reveal" ref={sectionRef as React.MutableRefObject<HTMLDivElement>}>
+        <div className="reveal" ref={ref1}>
           <span className="section-label">El problema</span>
-        </div>
-
-        {/* Main headline */}
-        <div className="reveal reveal-delay-1" ref={useReveal() as React.MutableRefObject<HTMLDivElement>}>
-          <h2
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 700,
-              fontSize: 'clamp(1.8rem, 4vw, 3rem)',
-              letterSpacing: '-0.025em',
-              lineHeight: 1.15,
-              maxWidth: '700px',
-              marginBottom: '2rem',
-              color: 'var(--text-primary)',
-            }}
-          >
+          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(1.55rem, 4vw, 2.6rem)', letterSpacing: '-0.025em', lineHeight: 1.15, maxWidth: '600px', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
             Mucho del trabajo del tatuador ocurre{' '}
-            <em
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontStyle: 'italic',
-                color: 'var(--accent-copper-light)',
-              }}
-            >
-              fuera del tatuaje.
-            </em>
+            <em style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', color: 'var(--accent-copper-light)' }}>fuera del tatuaje.</em>
           </h2>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '520px', marginBottom: '2rem' }}>
+            Tatuar es el centro. Pero alrededor hay un sistema entero que casi siempre se improvisa.
+          </p>
         </div>
 
-        {/* Two-column layout */}
+        {/* Pain cards — 2 col mobile, 3 col desktop */}
         <div
+          className="reveal reveal-delay-1"
+          ref={ref2}
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 440px), 1fr))',
-            gap: '3rem',
-            alignItems: 'start',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '0.75rem',
+            marginBottom: '2rem',
           }}
         >
-          {/* Left — Chaos */}
-          <div className="reveal reveal-delay-2" ref={useReveal() as React.MutableRefObject<HTMLDivElement>}>
+          {pains.map((p, i) => (
             <div
+              key={i}
               style={{
-                position: 'relative',
-                padding: '2rem',
-                background: 'rgba(26, 74, 40, 0.06)',
-                border: '1px solid rgba(42, 102, 54, 0.2)',
-                borderRadius: '8px',
-                overflow: 'hidden',
+                padding: '1rem',
+                background: p.color,
+                border: `1px solid ${p.border}`,
+                borderRadius: '6px',
+                gridColumn: i === 4 ? 'span 2' : 'span 1',
+                transition: 'transform 0.2s ease',
               }}
+              onMouseEnter={e => (e.currentTarget.style.transform = 'translateY(-3px)')}
+              onMouseLeave={e => (e.currentTarget.style.transform = 'translateY(0)')}
             >
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '1rem',
-                  right: '1rem',
-                  fontSize: '0.68rem',
-                  color: 'rgba(111,207,132,0.7)',
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  letterSpacing: '0.1em',
-                  fontWeight: 600,
-                }}
-              >
-                SIN SISTEMA
-              </div>
-
-              <div
-                ref={messagesRef}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.625rem',
-                }}
-              >
-                {chaoticMessages.map((msg, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      display: 'inline-flex',
-                      alignSelf: i % 2 === 0 ? 'flex-start' : 'flex-end',
-                      padding: '0.5rem 0.875rem',
-                      background: i % 2 === 0
-                        ? 'rgba(255,255,255,0.05)'
-                        : 'rgba(26,74,40,0.15)',
-                      border: '1px solid',
-                      borderColor: i % 2 === 0 ? 'var(--border)' : 'rgba(42,102,54,0.3)',
-                      borderRadius: i % 2 === 0 ? '12px 12px 12px 4px' : '12px 12px 4px 12px',
-                      fontSize: '0.8rem',
-                      color: i % 2 === 0 ? 'var(--text-secondary)' : 'rgba(180,230,190,0.85)',
-                      fontFamily: "'Inter', sans-serif",
-                      maxWidth: '85%',
-                      opacity: 0,
-                      animation: `fadeUp 0.4s ease ${0.05 * i + 0.3}s forwards`,
-                    }}
-                  >
-                    {msg}
-                  </div>
-                ))}
-              </div>
+              <div style={{ color: 'var(--accent-copper)', marginBottom: '0.5rem' }}>{p.icon}</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-primary)', marginBottom: '0.3rem', lineHeight: 1.3 }}>{p.title}</div>
+              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{p.desc}</div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Right — Copy + Order card */}
-          <div className="reveal reveal-delay-3" ref={useReveal() as React.MutableRefObject<HTMLDivElement>}>
-            <p
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '1rem',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.8,
-                marginBottom: '2rem',
-              }}
-            >
-              Cotizar por chat. Pedir referencias. Recordar citas. Confirmar anticipos. Buscar diseños. Explicar cuidados. Responder lo mismo una y otra vez. Publicar contenido cuando alcanza el tiempo. Controlar insumos{' '}
-              <em style={{ color: 'var(--text-primary)', fontStyle: 'italic' }}>"más o menos de memoria".</em>
-            </p>
-
-            <p
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '1rem',
-                color: 'var(--text-primary)',
-                lineHeight: 1.8,
-                marginBottom: '2rem',
-              }}
-            >
-              Tatuar es el centro.
-              <br />
-              Pero alrededor hay un sistema entero que casi siempre se improvisa.
-            </p>
-
-            {/* Order card */}
-            <div
-              className="card"
-              style={{
-                padding: '1.5rem',
-                borderColor: 'rgba(184,115,51,0.2)',
-                background: 'rgba(184,115,51,0.04)',
-              }}
-            >
-              <div style={{ fontSize: '0.68rem', color: 'var(--accent-copper)', letterSpacing: '0.12em', fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif", marginBottom: '1rem' }}>
-                CON TINTAOS
-              </div>
-              {[
-                'Solicitudes claras desde el inicio',
-                'Agenda sin mensajes perdidos',
-                'Anticipos gestionados automáticamente',
-                'Portafolio que convierte visitas en citas',
-                'Control de insumos en tiempo real',
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                    padding: '0.5rem 0',
-                    borderBottom: i < 4 ? '1px solid var(--border)' : 'none',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 6,
-                      height: 6,
-                      borderRadius: '50%',
-                      background: 'var(--accent-copper)',
-                      flexShrink: 0,
-                    }}
-                  />
-                  <span style={{ fontSize: '0.85rem', color: 'var(--text-primary)', fontFamily: "'Inter', sans-serif" }}>
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <blockquote
-              className="quote-block"
-              style={{ marginTop: '2rem' }}
-            >
-              TintaOS nace para preguntarse: ¿qué pasaría si ese sistema estuviera bien pensado desde el principio?
-            </blockquote>
-          </div>
+        <div className="reveal reveal-delay-2" ref={ref3}>
+          <blockquote className="quote-block">
+            TintaOS nace para preguntarse: ¿qué pasaría si ese sistema estuviera bien pensado desde el principio?
+          </blockquote>
         </div>
       </div>
-
-      <div className="divider-copper" style={{ marginTop: '4rem' }} />
+      <div className="divider-copper" style={{ marginTop: '2.5rem' }} />
     </section>
   )
 }
